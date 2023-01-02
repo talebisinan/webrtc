@@ -1,5 +1,5 @@
-import { SonoClient } from "https://deno.land/x/sono@v1.1/src/sonoClient.js"
-import { webRTC } from "https://deno.land/x/sono@v1.1/src/sonoRTC.js"
+import { SonoClient } from 'https://deno.land/x/sono@v1.1/src/sonoClient.js'
+import { SonoRTC } from "https://deno.land/x/sono@v1.1/src/sonoRTC.js";
 
 const sono = new SonoClient('ws://localhost:8080/ws');
 
@@ -33,7 +33,7 @@ const localVideo = document.getElementById('localVideo');
 const constraints = {audio: true, video: true};
 const remotevideocontainer = document.getElementById('remotevideocontainer')
 
-const rtc= new webRTC(serverConfig, sono, localVideo, remotevideocontainer, constraints);
+const rtc= new SonoRTC(serverConfig, sono, localVideo, remotevideocontainer, constraints);
 
 document.getElementById('start').onclick = () => {
   rtc.startLocalMedia();
